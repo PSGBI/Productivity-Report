@@ -1,0 +1,2690 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/27/2018 7:26:52 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USTULD0086"
+  DTS:CreatorName="AD\seabur"
+  DTS:DTSID="{6B4E9704-F1B3-466D-BF76-1D80640FEF73}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{0CF5C8C1-5E27-4BB0-8D11-B709E4B501A9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SAMSON.S1049ZKM.apache]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4B59FE53-85BA-4E25-B60F-4519553D82AA}"
+      DTS:ObjectName="SAMSON.S1049ZKM.apache">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SAMSON;User ID=apache;Initial Catalog=S1049ZKM;Provider=IBMDASQL.DataSource.1;Persist Security Info=True;Force Translate=37;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZXKTKapgt0KTPz5HwT94zAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA/HSiWU2GT95OPWgflWUq4AAAAAASAAACgAAAAEAAAADS5shQ6wfrE3gEr8Atm2HIQAAAAmkA8vkb/+DCiZmYRx+vkzxQAAAAoC9sg72lXe4QOZt/KHpevIVXCqg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ustulsrs0003\psgbi.PSG_Hub.ssis]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{100DB2D9-5785-4FE8-A107-CA08930D49C5}"
+      DTS:ObjectName="ustulsrs0003\psgbi.PSG_Hub.ssis">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ustulsrs0003\psgbi;User ID=ssis;Initial Catalog=PSG_Hub;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZXKTKapgt0KTPz5HwT94zAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABfy5AZA/RzX5rANh5A+CqLAAAAAASAAACgAAAAEAAAAF7gP2dE+b8u42PJB4IdMPYYAAAAy03xrFlXQY5PYXiEXnEWFEilW2XrZUe0FAAAAFYkLXVWAllvxcdnnUUzdHhoHgzX</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\F3003_B"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6009750D-0C40-4B03-A1F7-2521C22BCB50}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="F3003_B"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\F3003_B\F3003_B"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="F3003_B"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from amsdta.f3003_B</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\F3003_B\F3003_B.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SAMSON.S1049ZKM.apache]"
+                  connectionManagerRefId="Package.ConnectionManagers[SAMSON.S1049ZKM.apache]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRTRT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRTRT]"
+                      length="3"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRTRT]"
+                      name="IRTRT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRKIT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRKIT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRKIT]"
+                      name="IRKIT"
+                      precision="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRKITL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRKITL]"
+                      length="25"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRKITL]"
+                      name="IRKITL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRKITA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRKITA]"
+                      length="25"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRKITA]"
+                      name="IRKITA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRMMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRMMCU]"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRMMCU]"
+                      name="IRMMCU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRALD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRALD]"
+                      length="4"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRALD]"
+                      name="IRALD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRDSC1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRDSC1]"
+                      length="30"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRDSC1]"
+                      name="IRDSC1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRLINE]"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLINE]"
+                      name="IRLINE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRMCU]"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRMCU]"
+                      name="IRMCU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRWMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRWMCU]"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRWMCU]"
+                      name="IRWMCU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPLMA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPLMA]"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPLMA]"
+                      name="IRPLMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSETT]"
+                      length="5"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETT]"
+                      name="IRSETT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSETG]"
+                      length="5"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETG]"
+                      name="IRSETG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPSQ]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROPSQ]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPSQ]"
+                      name="IROPSQ"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRALOP]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRALOP]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRALOP]"
+                      name="IRALOP"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRAOPS]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRAOPS]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRAOPS]"
+                      name="IRAOPS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IREFFF]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IREFFF]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IREFFF]"
+                      name="IREFFF"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IREFFT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IREFFT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IREFFT]"
+                      name="IREFFT"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRBFPF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRBFPF]"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRBFPF]"
+                      name="IRBFPF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLAMC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRLAMC]"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLAMC]"
+                      name="IRLAMC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRTIMB]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRTIMB]"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRTIMB]"
+                      name="IRTIMB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPSR]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROPSR]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPSR]"
+                      name="IROPSR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRBQTY]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRBQTY]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRBQTY]"
+                      name="IRBQTY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRUOM]"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRUOM]"
+                      name="IRUOM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUNF]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRUNF]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUNF]"
+                      name="IRRUNF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUNM]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRUNM]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUNM]"
+                      name="IRRUNM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUNL]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRUNL]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUNL]"
+                      name="IRRUNL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETL]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSETL]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETL]"
+                      name="IRSETL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPWRT]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPWRT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPWRT]"
+                      name="IRPWRT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETC]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSETC]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETC]"
+                      name="IRSETC"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRMOVD]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRMOVD]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRMOVD]"
+                      name="IRMOVD"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRQUED]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRQUED]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRQUED]"
+                      name="IRQUED"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLTPC]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRLTPC]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLTPC]"
+                      name="IRLTPC"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPOVR]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPOVR]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPOVR]"
+                      name="IRPOVR"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROLQT]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROLQT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROLQT]"
+                      name="IROLQT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRNXOP]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRNXOP]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRNXOP]"
+                      name="IRNXOP"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPYP]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROPYP]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPYP]"
+                      name="IROPYP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRCPYP]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRCPYP]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRCPYP]"
+                      name="IRCPYP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRAPID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRAPID]"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRAPID]"
+                      name="IRAPID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSHNO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSHNO]"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSHNO]"
+                      name="IRSHNO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPSC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROPSC]"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPSC]"
+                      name="IROPSC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRINPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRINPE]"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRINPE]"
+                      name="IRINPE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRJBCD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRJBCD]"
+                      length="6"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRJBCD]"
+                      name="IRJBCD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRAN8]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRAN8]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRAN8]"
+                      name="IRAN8"
+                      precision="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRVEND]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRVEND]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRVEND]"
+                      name="IRVEND"
+                      precision="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPOY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPOY]"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPOY]"
+                      name="IRPOY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRCOST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRCOST]"
+                      length="3"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRCOST]"
+                      name="IRCOST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROMCU]"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROMCU]"
+                      name="IROMCU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROBJ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROBJ]"
+                      length="6"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROBJ]"
+                      name="IROBJ"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSUB]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSUB]"
+                      length="8"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSUB]"
+                      name="IRSUB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRREV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRREV]"
+                      length="3"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRREV]"
+                      name="IRRREV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLOCN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRLOCN]"
+                      length="20"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLOCN]"
+                      name="IRLOCN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUC]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRUC]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUC]"
+                      name="IRRUC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRCAPU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRCAPU]"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRCAPU]"
+                      name="IRCAPU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURCD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURCD]"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURCD]"
+                      name="IRURCD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURDT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURDT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURDT]"
+                      name="IRURDT"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURAT]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURAT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURAT]"
+                      name="IRURAT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURRF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURRF]"
+                      length="15"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURRF]"
+                      name="IRURRF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURAB]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURAB]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURAB]"
+                      name="IRURAB"
+                      precision="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRUSER]"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRUSER]"
+                      name="IRUSER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPID]"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPID]"
+                      name="IRPID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRUPMJ]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRUPMJ]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRUPMJ]"
+                      name="IRUPMJ"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRTDAY]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRTDAY]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRTDAY]"
+                      name="IRTDAY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRJOBN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRJOBN]"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRJOBN]"
+                      name="IRJOBN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRACTB]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRACTB]"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRACTB]"
+                      name="IRACTB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRWTIM]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRWTIM]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRWTIM]"
+                      name="IRWTIM"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRNUMB]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRNUMB]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRNUMB]"
+                      name="IRNUMB"
+                      precision="8"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRTRT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IRTRT" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRKIT]"
+                      dataType="numeric"
+                      name="IRKIT"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRKITL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="IRKITL" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRKITA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="IRKITA" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRMMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRMMCU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRALD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="IRALD" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRDSC1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="IRDSC1" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRLINE" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRMCU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRWMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRWMCU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPLMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRPLMA" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSETT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="IRSETT" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSETG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="IRSETG" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROPSQ]"
+                      dataType="numeric"
+                      name="IROPSQ"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRALOP]"
+                      dataType="numeric"
+                      name="IRALOP"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRAOPS]"
+                      dataType="decimal"
+                      name="IRAOPS" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IREFFF]"
+                      dataType="numeric"
+                      name="IREFFF"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IREFFT]"
+                      dataType="numeric"
+                      name="IREFFT"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRBFPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRBFPF" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRLAMC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRLAMC" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRTIMB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRTIMB" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROPSR]"
+                      dataType="decimal"
+                      name="IROPSR" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRBQTY]"
+                      dataType="decimal"
+                      name="IRBQTY" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IRUOM" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRUNF]"
+                      dataType="decimal"
+                      name="IRRUNF" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRUNM]"
+                      dataType="decimal"
+                      name="IRRUNM" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRUNL]"
+                      dataType="decimal"
+                      name="IRRUNL" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSETL]"
+                      dataType="decimal"
+                      name="IRSETL" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPWRT]"
+                      dataType="decimal"
+                      name="IRPWRT" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSETC]"
+                      dataType="numeric"
+                      name="IRSETC"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRMOVD]"
+                      dataType="numeric"
+                      name="IRMOVD"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRQUED]"
+                      dataType="numeric"
+                      name="IRQUED"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRLTPC]"
+                      dataType="numeric"
+                      name="IRLTPC"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPOVR]"
+                      dataType="numeric"
+                      name="IRPOVR"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROLQT]"
+                      dataType="decimal"
+                      name="IROLQT" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRNXOP]"
+                      dataType="numeric"
+                      name="IRNXOP"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROPYP]"
+                      dataType="decimal"
+                      name="IROPYP" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRCPYP]"
+                      dataType="decimal"
+                      name="IRCPYP" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRAPID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRAPID" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSHNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRSHNO" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROPSC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IROPSC" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRINPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IRINPE" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRJBCD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="IRJBCD" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRAN8]"
+                      dataType="numeric"
+                      name="IRAN8"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRVEND]"
+                      dataType="numeric"
+                      name="IRVEND"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPOY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRPOY" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRCOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IRCOST" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IROMCU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IROBJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="IROBJ" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRSUB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="IRSUB" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRREV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IRRREV" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRLOCN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="IRLOCN" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRRUC]"
+                      dataType="decimal"
+                      name="IRRUC" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRCAPU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IRCAPU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURCD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IRURCD" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURDT]"
+                      dataType="numeric"
+                      name="IRURDT"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURAT]"
+                      dataType="decimal"
+                      name="IRURAT" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURRF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="IRURRF" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRURAB]"
+                      dataType="numeric"
+                      name="IRURAB"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRUSER" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRPID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRPID" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRUPMJ]"
+                      dataType="numeric"
+                      name="IRUPMJ"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRTDAY]"
+                      dataType="decimal"
+                      name="IRTDAY" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRJOBN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRJOBN" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRACTB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRACTB" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRWTIM]"
+                      dataType="numeric"
+                      name="IRWTIM"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].ExternalColumns[IRNUMB]"
+                      dataType="numeric"
+                      name="IRNUMB"
+                      precision="8" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRTRT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRTRT]"
+                      name="IRTRT" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRKIT]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRKIT]"
+                      name="IRKIT"
+                      precision="8" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRKITL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRKITL]"
+                      name="IRKITL" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRKITA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRKITA]"
+                      name="IRKITA" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRMMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRMMCU]"
+                      name="IRMMCU" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRALD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRALD]"
+                      name="IRALD" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRDSC1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRDSC1]"
+                      name="IRDSC1" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRLINE]"
+                      name="IRLINE" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRMCU]"
+                      name="IRMCU" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRWMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRWMCU]"
+                      name="IRWMCU" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPLMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPLMA]"
+                      name="IRPLMA" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSETT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSETT]"
+                      name="IRSETT" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSETG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSETG]"
+                      name="IRSETG" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROPSQ]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROPSQ]"
+                      name="IROPSQ"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRALOP]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRALOP]"
+                      name="IRALOP"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRAOPS]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRAOPS]"
+                      name="IRAOPS" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IREFFF]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IREFFF]"
+                      name="IREFFF"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IREFFT]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IREFFT]"
+                      name="IREFFT"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRBFPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRBFPF]"
+                      name="IRBFPF" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRLAMC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRLAMC]"
+                      name="IRLAMC" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRTIMB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRTIMB]"
+                      name="IRTIMB" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROPSR]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROPSR]"
+                      name="IROPSR" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRBQTY]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRBQTY]"
+                      name="IRBQTY" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRUOM]"
+                      name="IRUOM" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRUNF]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRUNF]"
+                      name="IRRUNF" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRUNM]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRUNM]"
+                      name="IRRUNM" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRUNL]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRUNL]"
+                      name="IRRUNL" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSETL]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSETL]"
+                      name="IRSETL" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPWRT]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPWRT]"
+                      name="IRPWRT" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSETC]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSETC]"
+                      name="IRSETC"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRMOVD]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRMOVD]"
+                      name="IRMOVD"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRQUED]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRQUED]"
+                      name="IRQUED"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRLTPC]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRLTPC]"
+                      name="IRLTPC"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPOVR]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPOVR]"
+                      name="IRPOVR"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROLQT]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROLQT]"
+                      name="IROLQT" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRNXOP]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRNXOP]"
+                      name="IRNXOP"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROPYP]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROPYP]"
+                      name="IROPYP" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRCPYP]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRCPYP]"
+                      name="IRCPYP" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRAPID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRAPID]"
+                      name="IRAPID" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSHNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSHNO]"
+                      name="IRSHNO" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROPSC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROPSC]"
+                      name="IROPSC" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRINPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRINPE]"
+                      name="IRINPE" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRJBCD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRJBCD]"
+                      name="IRJBCD" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRAN8]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRAN8]"
+                      name="IRAN8"
+                      precision="8" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRVEND]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRVEND]"
+                      name="IRVEND"
+                      precision="8" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPOY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPOY]"
+                      name="IRPOY" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRCOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRCOST]"
+                      name="IRCOST" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROMCU]"
+                      name="IROMCU" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROBJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IROBJ]"
+                      name="IROBJ" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSUB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRSUB]"
+                      name="IRSUB" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRREV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRREV]"
+                      name="IRRREV" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRLOCN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRLOCN]"
+                      name="IRLOCN" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRUC]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRRUC]"
+                      name="IRRUC" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRCAPU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRCAPU]"
+                      name="IRCAPU" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURCD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURCD]"
+                      name="IRURCD" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURDT]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURDT]"
+                      name="IRURDT"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURAT]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURAT]"
+                      name="IRURAT" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURRF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURRF]"
+                      name="IRURRF" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURAB]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRURAB]"
+                      name="IRURAB"
+                      precision="8" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRUSER]"
+                      name="IRUSER" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRPID]"
+                      name="IRPID" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRUPMJ]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRUPMJ]"
+                      name="IRUPMJ"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRTDAY]"
+                      dataType="decimal"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRTDAY]"
+                      name="IRTDAY" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRJOBN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRJOBN]"
+                      name="IRJOBN" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRACTB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRACTB]"
+                      name="IRACTB" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRWTIM]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRWTIM]"
+                      name="IRWTIM"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRNUMB]"
+                      dataType="numeric"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[IRNUMB]"
+                      name="IRNUMB"
+                      precision="8" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\F3003_B\FIN_BaseFile"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FIN_BaseFile"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[FIN_BaseFile]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\F3003_B\FIN_BaseFile.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ustulsrs0003\psgbi.PSG_Hub.ssis]"
+                  connectionManagerRefId="Package.ConnectionManagers[ustulsrs0003\psgbi.PSG_Hub.ssis]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRTRT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="IRTRT"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRTRT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRTRT]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRKIT]"
+                      cachedDataType="numeric"
+                      cachedName="IRKIT"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRKIT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRKIT]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRKITL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="IRKITL"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRKITL]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRKITL]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRKITA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="IRKITA"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRKITA]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRKITA]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRMMCU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="IRMMCU"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRMMCU]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRMMCU]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRALD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="IRALD"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRALD]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRALD]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRDSC1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="IRDSC1"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRDSC1]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRDSC1]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRLINE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="IRLINE"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRLINE]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLINE]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRMCU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="IRMCU"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRMCU]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRMCU]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRWMCU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="IRWMCU"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRWMCU]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRWMCU]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRPLMA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="IRPLMA"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPLMA]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPLMA]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRSETT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="IRSETT"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSETT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETT]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRSETG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="IRSETG"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSETG]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETG]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IROPSQ]"
+                      cachedDataType="numeric"
+                      cachedName="IROPSQ"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROPSQ]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPSQ]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRALOP]"
+                      cachedDataType="numeric"
+                      cachedName="IRALOP"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRALOP]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRALOP]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRAOPS]"
+                      cachedDataType="decimal"
+                      cachedName="IRAOPS"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRAOPS]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRAOPS]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IREFFF]"
+                      cachedDataType="numeric"
+                      cachedName="IREFFF"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IREFFF]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IREFFF]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IREFFT]"
+                      cachedDataType="numeric"
+                      cachedName="IREFFT"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IREFFT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IREFFT]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRBFPF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="IRBFPF"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRBFPF]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRBFPF]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRLAMC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="IRLAMC"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRLAMC]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLAMC]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRTIMB]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="IRTIMB"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRTIMB]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRTIMB]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IROPSR]"
+                      cachedDataType="decimal"
+                      cachedName="IROPSR"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROPSR]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPSR]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRBQTY]"
+                      cachedDataType="decimal"
+                      cachedName="IRBQTY"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRBQTY]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRBQTY]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRUOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="IRUOM"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRUOM]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRUOM]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRRUNF]"
+                      cachedDataType="decimal"
+                      cachedName="IRRUNF"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRUNF]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUNF]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRRUNM]"
+                      cachedDataType="decimal"
+                      cachedName="IRRUNM"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRUNM]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUNM]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRRUNL]"
+                      cachedDataType="decimal"
+                      cachedName="IRRUNL"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRUNL]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUNL]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRSETL]"
+                      cachedDataType="decimal"
+                      cachedName="IRSETL"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSETL]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETL]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRPWRT]"
+                      cachedDataType="decimal"
+                      cachedName="IRPWRT"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPWRT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPWRT]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRSETC]"
+                      cachedDataType="numeric"
+                      cachedName="IRSETC"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSETC]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSETC]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRMOVD]"
+                      cachedDataType="numeric"
+                      cachedName="IRMOVD"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRMOVD]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRMOVD]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRQUED]"
+                      cachedDataType="numeric"
+                      cachedName="IRQUED"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRQUED]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRQUED]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRLTPC]"
+                      cachedDataType="numeric"
+                      cachedName="IRLTPC"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRLTPC]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLTPC]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRPOVR]"
+                      cachedDataType="numeric"
+                      cachedName="IRPOVR"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPOVR]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPOVR]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IROLQT]"
+                      cachedDataType="decimal"
+                      cachedName="IROLQT"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROLQT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROLQT]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRNXOP]"
+                      cachedDataType="numeric"
+                      cachedName="IRNXOP"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRNXOP]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRNXOP]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IROPYP]"
+                      cachedDataType="decimal"
+                      cachedName="IROPYP"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROPYP]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPYP]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRCPYP]"
+                      cachedDataType="decimal"
+                      cachedName="IRCPYP"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRCPYP]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRCPYP]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRAPID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="IRAPID"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRAPID]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRAPID]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRSHNO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="IRSHNO"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSHNO]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSHNO]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IROPSC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="IROPSC"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROPSC]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROPSC]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRINPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="IRINPE"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRINPE]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRINPE]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRJBCD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="IRJBCD"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRJBCD]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRJBCD]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRAN8]"
+                      cachedDataType="numeric"
+                      cachedName="IRAN8"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRAN8]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRAN8]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRVEND]"
+                      cachedDataType="numeric"
+                      cachedName="IRVEND"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRVEND]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRVEND]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRPOY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="IRPOY"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPOY]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPOY]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRCOST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="IRCOST"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRCOST]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRCOST]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IROMCU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="IROMCU"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROMCU]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROMCU]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IROBJ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="IROBJ"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROBJ]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IROBJ]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRSUB]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="IRSUB"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSUB]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRSUB]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRRREV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="IRRREV"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRREV]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRREV]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRLOCN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="IRLOCN"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRLOCN]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRLOCN]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRRUC]"
+                      cachedDataType="decimal"
+                      cachedName="IRRUC"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRUC]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRRUC]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRCAPU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="IRCAPU"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRCAPU]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRCAPU]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRURCD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="IRURCD"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURCD]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURCD]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRURDT]"
+                      cachedDataType="numeric"
+                      cachedName="IRURDT"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURDT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURDT]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRURAT]"
+                      cachedDataType="decimal"
+                      cachedName="IRURAT"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURAT]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURAT]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRURRF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="IRURRF"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURRF]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURRF]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRURAB]"
+                      cachedDataType="numeric"
+                      cachedName="IRURAB"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURAB]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRURAB]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRUSER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="IRUSER"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRUSER]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRUSER]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRPID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="IRPID"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPID]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRPID]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRUPMJ]"
+                      cachedDataType="numeric"
+                      cachedName="IRUPMJ"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRUPMJ]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRUPMJ]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRTDAY]"
+                      cachedDataType="decimal"
+                      cachedName="IRTDAY"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRTDAY]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRTDAY]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRJOBN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="IRJOBN"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRJOBN]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRJOBN]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRACTB]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="IRACTB"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRACTB]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRACTB]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRWTIM]"
+                      cachedDataType="numeric"
+                      cachedName="IRWTIM"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRWTIM]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRWTIM]" />
+                    <inputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].Columns[IRNUMB]"
+                      cachedDataType="numeric"
+                      cachedName="IRNUMB"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRNUMB]"
+                      lineageId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output].Columns[IRNUMB]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRTRT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IRTRT" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRKIT]"
+                      dataType="numeric"
+                      name="IRKIT"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRKITL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="IRKITL" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRKITA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="IRKITA" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRMMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRMMCU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRALD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="IRALD" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRDSC1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="IRDSC1" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRLINE" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRMCU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRWMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRWMCU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPLMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRPLMA" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSETT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="IRSETT" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSETG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="IRSETG" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROPSQ]"
+                      dataType="numeric"
+                      name="IROPSQ"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRALOP]"
+                      dataType="numeric"
+                      name="IRALOP"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRAOPS]"
+                      dataType="numeric"
+                      name="IRAOPS"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IREFFF]"
+                      dataType="numeric"
+                      name="IREFFF"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IREFFT]"
+                      dataType="numeric"
+                      name="IREFFT"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRBFPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRBFPF" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRLAMC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRLAMC" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRTIMB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRTIMB" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROPSR]"
+                      dataType="numeric"
+                      name="IROPSR"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRBQTY]"
+                      dataType="numeric"
+                      name="IRBQTY"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IRUOM" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRUNF]"
+                      dataType="numeric"
+                      name="IRRUNF"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRUNM]"
+                      dataType="numeric"
+                      name="IRRUNM"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRUNL]"
+                      dataType="numeric"
+                      name="IRRUNL"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSETL]"
+                      dataType="numeric"
+                      name="IRSETL"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPWRT]"
+                      dataType="numeric"
+                      name="IRPWRT"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSETC]"
+                      dataType="numeric"
+                      name="IRSETC"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRMOVD]"
+                      dataType="numeric"
+                      name="IRMOVD"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRQUED]"
+                      dataType="numeric"
+                      name="IRQUED"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRLTPC]"
+                      dataType="numeric"
+                      name="IRLTPC"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPOVR]"
+                      dataType="numeric"
+                      name="IRPOVR"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROLQT]"
+                      dataType="numeric"
+                      name="IROLQT"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRNXOP]"
+                      dataType="numeric"
+                      name="IRNXOP"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROPYP]"
+                      dataType="numeric"
+                      name="IROPYP"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRCPYP]"
+                      dataType="numeric"
+                      name="IRCPYP"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRAPID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IRAPID" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSHNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRSHNO" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROPSC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IROPSC" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRINPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IRINPE" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRJBCD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="IRJBCD" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRAN8]"
+                      dataType="numeric"
+                      name="IRAN8"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRVEND]"
+                      dataType="numeric"
+                      name="IRVEND"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPOY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IRPOY" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRCOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IRCOST" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="IROMCU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IROBJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="IROBJ" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRSUB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="IRSUB" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRREV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IRRREV" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRLOCN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="IRLOCN" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRRUC]"
+                      dataType="numeric"
+                      name="IRRUC"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRCAPU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IRCAPU" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURCD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="IRURCD" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURDT]"
+                      dataType="numeric"
+                      name="IRURDT"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURAT]"
+                      dataType="numeric"
+                      name="IRURAT"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURRF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="IRURRF" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRURAB]"
+                      dataType="numeric"
+                      name="IRURAB"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRUSER" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRPID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRPID" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRUPMJ]"
+                      dataType="numeric"
+                      name="IRUPMJ"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRTDAY]"
+                      dataType="numeric"
+                      name="IRTDAY"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRJOBN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRJOBN" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRACTB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="IRACTB" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRWTIM]"
+                      dataType="numeric"
+                      name="IRWTIM"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input].ExternalColumns[IRNUMB]"
+                      dataType="numeric"
+                      name="IRNUMB"
+                      precision="8" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\F3003_B\FIN_BaseFile.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\F3003_B\FIN_BaseFile.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\F3003_B\FIN_BaseFile.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\F3003_B\FIN_BaseFile.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\F3003_B.Paths[OLE DB Source Output]"
+              endId="Package\F3003_B\FIN_BaseFile.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\F3003_B\F3003_B.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="120,42"
+          Id="Package\F3003_B"
+          TopLeft="158,101" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\F3003_B">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="120,42"
+          Id="Package\F3003_B\F3003_B"
+          TopLeft="285,79" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\F3003_B\FIN_BaseFile"
+          TopLeft="376,187" />
+        <EdgeLayout
+          Id="Package\F3003_B.Paths[OLE DB Source Output]"
+          TopLeft="345,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101,66"
+              Start="0,0"
+              End="101,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="4,33" />
+                  <mssgle:LineSegment
+                    End="97,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="97,33"
+                    Point2="101,33"
+                    Point3="101,37" />
+                  <mssgle:LineSegment
+                    End="101,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\F3003_B\F3003_B">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\F3003_B\FIN_BaseFile">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

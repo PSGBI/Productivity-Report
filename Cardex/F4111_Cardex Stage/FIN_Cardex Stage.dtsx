@@ -1,0 +1,1035 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/28/2018 12:26:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USTULD0086"
+  DTS:CreatorName="AD\seabur"
+  DTS:DTSID="{353DB619-E084-481E-AF70-AF79439D99BC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="FIN_Cardex Stage"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{C4E8F9A7-0A3B-43FF-8AD3-28F76B65CEDF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SAMSON.S1049ZKM.apache]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{88F8D624-1AC3-4F9F-B458-75DBACBDE58F}"
+      DTS:ObjectName="SAMSON.S1049ZKM.apache">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SAMSON;User ID=apache;Initial Catalog=S1049ZKM;Provider=IBMDASQL.DataSource.1;Persist Security Info=True;Force Translate=37;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZXKTKapgt0KTPz5HwT94zAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADpOKbJFgJ/5QC3KWt00TycAAAAAASAAACgAAAAEAAAALFD7346SNUqff2sjtpKtzMQAAAASw/1l6EirdKv3UYwsOE8gBQAAAAHzQ2RVOWl234+0T/BNW4l+3jJtA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ustulsrs0003\psgbi.PSG_Hub.ssis]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{026C0064-26AA-4EB9-A3AC-1AAB101216D7}"
+      DTS:ObjectName="ustulsrs0003\psgbi.PSG_Hub.ssis">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ustulsrs0003\psgbi;User ID=ssis;Initial Catalog=PSG_Hub;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZXKTKapgt0KTPz5HwT94zAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAATgN7x2IkumOJQ2JgJpQOnAAAAAASAAACgAAAAEAAAANbaaSq5vi8NbZbrI/7IWscYAAAA/mpZ97pznPllTOOI4eWLChFILTRBQwTAFAAAAMgiSVyxfEifJOGMurP89Pj0PE6w</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load FIN_Cardex_Stage"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{905214B2-F166-4F68-9979-BA4BF0DB2302}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load FIN_Cardex_Stage"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load FIN_Cardex_Stage\F4111LA"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="F4111LA"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  ILITM
+      ,ILLITM
+      ,ILMCU
+      ,ILDOC
+      ,ILDOCO
+      ,ILDCT
+      ,ILDCTO
+      ,ILCRDJ
+      ,ILTRUM
+      ,ILTREX
+      ,ILTREF
+      ,ILTRQT
+      ,ILUNCS
+      ,ILPAID
+      ,ILUPMJ
+      ,ILUSER
+      ,ILUKID
+      FROM AMSDTA.F4111LA WHERE iltrdj =
+(
+    (substr(year(current date - 1 DAYS),2,1)+1) ||
+    substr(year(current date - 1 DAYS),3,2) ||
+    (CASE     WHEN dayofyear(current date - 1 DAYS) &gt; 99 THEN ('' || dayofyear(current date - 1 DAYS))
+         WHEN dayofyear(current date - 1 DAYS) &gt; '9'   THEN ('0' || dayofyear(current date - 1 DAYS))
+        ELSE ('00' || dayofyear(current date - 1 DAYS))
+    END )
+) and ILDCT='IC'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load FIN_Cardex_Stage\F4111LA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SAMSON.S1049ZKM.apache]"
+                  connectionManagerRefId="Package.ConnectionManagers[SAMSON.S1049ZKM.apache]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILITM]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILITM]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILITM]"
+                      name="ILITM"
+                      precision="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILLITM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILLITM]"
+                      length="25"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILLITM]"
+                      name="ILLITM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILMCU]"
+                      length="12"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILMCU]"
+                      name="ILMCU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDOC]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILDOC]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDOC]"
+                      name="ILDOC"
+                      precision="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDOCO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILDOCO]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDOCO]"
+                      name="ILDOCO"
+                      precision="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDCT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILDCT]"
+                      length="2"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDCT]"
+                      name="ILDCT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDCTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILDCTO]"
+                      length="2"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDCTO]"
+                      name="ILDCTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTRUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILTRUM]"
+                      length="2"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTRUM]"
+                      name="ILTRUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTREX]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILTREX]"
+                      length="30"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTREX]"
+                      name="ILTREX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTREF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILTREF]"
+                      length="8"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTREF]"
+                      name="ILTREF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTRQT]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILTRQT]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTRQT]"
+                      name="ILTRQT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUNCS]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILUNCS]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUNCS]"
+                      name="ILUNCS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILPAID]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILPAID]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILPAID]"
+                      name="ILPAID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUPMJ]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILUPMJ]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUPMJ]"
+                      name="ILUPMJ"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILUSER]"
+                      length="10"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUSER]"
+                      name="ILUSER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUKID]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILUKID]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUKID]"
+                      name="ILUKID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILCRDJ]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILCRDJ]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILCRDJ]"
+                      name="ILCRDJ"
+                      precision="6"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILITM]"
+                      dataType="numeric"
+                      name="ILITM"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILLITM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="ILLITM" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="ILMCU" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILDOC]"
+                      dataType="numeric"
+                      name="ILDOC"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILDOCO]"
+                      dataType="numeric"
+                      name="ILDOCO"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILDCT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ILDCT" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILDCTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ILDCTO" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILTRUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ILTRUM" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILTREX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ILTREX" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILTREF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ILTREF" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILTRQT]"
+                      dataType="decimal"
+                      name="ILTRQT" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILUNCS]"
+                      dataType="decimal"
+                      name="ILUNCS" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILPAID]"
+                      dataType="decimal"
+                      name="ILPAID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILUPMJ]"
+                      dataType="numeric"
+                      name="ILUPMJ"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ILUSER" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILUKID]"
+                      dataType="decimal"
+                      name="ILUKID" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].ExternalColumns[ILCRDJ]"
+                      dataType="numeric"
+                      name="ILCRDJ"
+                      precision="6" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILITM]"
+                      dataType="numeric"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILITM]"
+                      name="ILITM"
+                      precision="8" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILLITM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILLITM]"
+                      name="ILLITM" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILMCU]"
+                      name="ILMCU" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILDOC]"
+                      dataType="numeric"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILDOC]"
+                      name="ILDOC"
+                      precision="8" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILDOCO]"
+                      dataType="numeric"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILDOCO]"
+                      name="ILDOCO"
+                      precision="8" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILDCT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILDCT]"
+                      name="ILDCT" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILDCTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILDCTO]"
+                      name="ILDCTO" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILCRDJ]"
+                      dataType="numeric"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILCRDJ]"
+                      name="ILCRDJ"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILTRUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILTRUM]"
+                      name="ILTRUM" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILTREX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILTREX]"
+                      name="ILTREX" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILTREF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILTREF]"
+                      name="ILTREF" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILTRQT]"
+                      dataType="decimal"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILTRQT]"
+                      name="ILTRQT" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILUNCS]"
+                      dataType="decimal"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILUNCS]"
+                      name="ILUNCS" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILPAID]"
+                      dataType="decimal"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILPAID]"
+                      name="ILPAID" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILUPMJ]"
+                      dataType="numeric"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILUPMJ]"
+                      name="ILUPMJ"
+                      precision="6" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILUSER]"
+                      name="ILUSER" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILUKID]"
+                      dataType="decimal"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ILUKID]"
+                      name="ILUKID" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FIN_Cardex_Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[FIN_Cardex_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ustulsrs0003\psgbi.PSG_Hub.ssis]"
+                  connectionManagerRefId="Package.ConnectionManagers[ustulsrs0003\psgbi.PSG_Hub.ssis]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILITM]"
+                      cachedDataType="numeric"
+                      cachedName="ILITM"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILITM]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILITM]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILLITM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="ILLITM"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILLITM]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILLITM]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILMCU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="ILMCU"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILMCU]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILMCU]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILDOC]"
+                      cachedDataType="numeric"
+                      cachedName="ILDOC"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILDOC]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDOC]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILDOCO]"
+                      cachedDataType="numeric"
+                      cachedName="ILDOCO"
+                      cachedPrecision="8"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILDOCO]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDOCO]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILDCT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="ILDCT"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILDCT]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDCT]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILDCTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="ILDCTO"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILDCTO]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILDCTO]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILTRUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="ILTRUM"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILTRUM]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTRUM]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILTREX]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ILTREX"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILTREX]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTREX]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILTREF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="ILTREF"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILTREF]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTREF]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILTRQT]"
+                      cachedDataType="decimal"
+                      cachedName="ILTRQT"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILTRQT]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILTRQT]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILUNCS]"
+                      cachedDataType="decimal"
+                      cachedName="ILUNCS"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILUNCS]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUNCS]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILPAID]"
+                      cachedDataType="decimal"
+                      cachedName="ILPAID"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILPAID]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILPAID]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILUPMJ]"
+                      cachedDataType="numeric"
+                      cachedName="ILUPMJ"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILUPMJ]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUPMJ]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILUSER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ILUSER"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILUSER]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUSER]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILUKID]"
+                      cachedDataType="decimal"
+                      cachedName="ILUKID"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILUKID]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILUKID]" />
+                    <inputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].Columns[ILCRDJ]"
+                      cachedDataType="numeric"
+                      cachedName="ILCRDJ"
+                      cachedPrecision="6"
+                      externalMetadataColumnId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILCRDJ]"
+                      lineageId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output].Columns[ILCRDJ]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILITM]"
+                      dataType="numeric"
+                      name="ILITM"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILLITM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="ILLITM" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILMCU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="ILMCU" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILDOC]"
+                      dataType="numeric"
+                      name="ILDOC"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILDOCO]"
+                      dataType="numeric"
+                      name="ILDOCO"
+                      precision="8" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILDCT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ILDCT" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILDCTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ILDCTO" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILTRUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ILTRUM" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILTREX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ILTREX" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILTREF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ILTREF" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILTRQT]"
+                      dataType="numeric"
+                      name="ILTRQT"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILUNCS]"
+                      dataType="numeric"
+                      name="ILUNCS"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILPAID]"
+                      dataType="numeric"
+                      name="ILPAID"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILUPMJ]"
+                      dataType="numeric"
+                      name="ILUPMJ"
+                      precision="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ILUSER" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILUKID]"
+                      dataType="numeric"
+                      name="ILUKID"
+                      precision="28" />
+                    <externalMetadataColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ILCRDJ]"
+                      dataType="numeric"
+                      name="ILCRDJ"
+                      precision="6" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load FIN_Cardex_Stage.Paths[OLE DB Source Output]"
+              endId="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load FIN_Cardex_Stage\F4111LA.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{087FB1EF-569E-4263-909E-E944ED46EA3B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{026C0064-26AA-4EB9-A3AC-1AAB101216D7}"
+          SQLTask:SqlStatementSource="truncate table psg_hub.dbo.FIN_Cardex_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EDF67255-341A-48E7-9F5A-6C26B99AFE84}"
+      DTS:From="Package\Truncate stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load FIN_Cardex_Stage" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Load FIN_Cardex_Stage"
+          TopLeft="308.571430624748,212.858824593303" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Truncate stage"
+          TopLeft="202,70" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="276.5,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.571430624748,100.858824593303"
+              Start="0,0"
+              End="128.571430624748,93.3588245933031">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.4294122966515" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.4294122966515"
+                    Point2="0,50.4294122966515"
+                    Point3="4,50.4294122966515" />
+                  <mssgle:LineSegment
+                    End="124.571430624748,50.4294122966515" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.571430624748,50.4294122966515"
+                    Point2="128.571430624748,50.4294122966515"
+                    Point3="128.571430624748,54.4294122966515" />
+                  <mssgle:LineSegment
+                    End="128.571430624748,93.3588245933031" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load FIN_Cardex_Stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage"
+          TopLeft="254.857147197334,165.788237619235" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Load FIN_Cardex_Stage\F4111LA"
+          TopLeft="140.571430965346,47.7176477280455" />
+        <EdgeLayout
+          Id="Package\Load FIN_Cardex_Stage.Paths[OLE DB Source Output]"
+          TopLeft="200.171430965346,89.3176477280455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.485716231989,76.4705898911895"
+              Start="0,0"
+              End="137.485716231989,68.9705898911895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.2352949455948" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.2352949455948"
+                    Point2="0,38.2352949455948"
+                    Point3="4,38.2352949455948" />
+                  <mssgle:LineSegment
+                    End="133.485716231989,38.2352949455948" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133.485716231989,38.2352949455948"
+                    Point2="137.485716231989,38.2352949455948"
+                    Point3="137.485716231989,42.2352949455948" />
+                  <mssgle:LineSegment
+                    End="137.485716231989,68.9705898911895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load FIN_Cardex_Stage\F4111LA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load FIN_Cardex_Stage\FIN_Cardex_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
